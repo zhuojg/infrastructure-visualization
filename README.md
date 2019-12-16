@@ -5,9 +5,9 @@ Visualization for Studio 1, AI and Data Design, D&I, Tongji University
 ## Progress
 
 * demo.html  
-The background can follow the scroll wheel, with animation.
-* d3_demo.html  
-The data points can be drawn on the background, but the positions are skewed.
+Add all results to this file.  
+* d3_demo.js  
+JS used in demo.html. Use MutationObserver to listen the change of CSS, so that D3js can work with skollr.js.
 
 ## Tools or Frameworks
 

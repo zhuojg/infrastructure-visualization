@@ -2,6 +2,13 @@
 
 Visualization for Studio 1, AI and Data Design, D&I, Tongji University
 
+## Progress
+
+* demo.html  
+The background can follow the scroll wheel, with animation.
+* d3_demo.html  
+The data points can be drawn on the background, but the positions are skewed.
+
 ## Tools or Frameworks
 
 * Swiper  
@@ -17,3 +24,6 @@ Visualization for Studio 1, AI and Data Design, D&I, Tongji University
   * 通过js
 * processing.js  
   * <http://processingjs.org/>
+* skrollr
+  * 视差滚动
+  * <http://prinzhorn.github.io/skrollr/>

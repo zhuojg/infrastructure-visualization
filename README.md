@@ -27,3 +27,4 @@ JS used in demo.html. Use MutationObserver to listen the change of CSS, so that 
 * skrollr
   * 视差滚动
   * <http://prinzhorn.github.io/skrollr/>
+* D3

@@ -10,9 +10,10 @@ var options = {
 var data;
 var category = [];
 var color;
-var current = {}
-var observer = {}
-var arc_position = []
+var current = {};
+var observer = {};
+var arc_position = [];
+var arc_data = [];
 
 var forward_func = {
     'bridge_building': bridgeBuilding,
@@ -39,11 +40,9 @@ part.forEach(function (item) {
     observer[item] = new MutationObserver(function (mutations, observer) {
         mutations.map(function (mutation) {
             if (current[item] == false && mutation.target.style.cssText == "opacity: 1;") {
-                console.log(forward_func[item]);
                 forward_func[item]();
                 current[item] = true;
             } else if (current[item] == true && mutation.target.style.cssText == "opacity: 0;") {
-                console.log(item);
                 backward_func[item]();
                 current[item] = false;
             }
@@ -62,7 +61,7 @@ function deBridgeBuilding() {
 
 function bridgeCategory() {
     colorPoints();
-    setTimeout(gatherCategory, 1000);
+    setTimeout(gatherCategory, 500);
     // gatherCategory();
 }
 
@@ -73,15 +72,19 @@ function deBridgeCategory() {
 }
 
 function bridgeCategoryXiela() {
-    // colorOneCategory("斜拉桥");
+    decolorPoints();
+    colorOneCategory("斜拉桥");
 }
 
 function deBridgeCategoryXiela() {
     // decolorOneCategory();
+    // decolorPoints();
+    colorPoints();
 }
 
 function bridgeCategoryGong() {
-    // colorOneCategory("拱桥");
+    decolorPoints();
+    colorOneCategory("拱桥");
 }
 
 function deBrdigeCategoryGong() {
@@ -100,8 +103,12 @@ function clearPoints() {
     d3.select("#points")
         .selectAll("circle")
         .transition()
-        .duration(1000)
+        .duration(500)
         .attr("r", 0)
+
+    d3.select("#arcs")
+    .selectAll("path")
+    .attr("opacity", 0);
 }
 
 function showPoints() {
@@ -112,7 +119,7 @@ function showPoints() {
         // .delay(function(d) {
         //     return (d["year"] - 1950) * 100;
         // })
-        .duration(1000)
+        .duration(500)
         .attr("r", 20);
 }
 
@@ -130,6 +137,8 @@ function drawPoints() {
         return d;
     }).then(function (d) {
         data = d;
+
+        // draw points
         svg.append("g")
             .attr("id", "points")
             .selectAll("circle")
@@ -144,9 +153,64 @@ function drawPoints() {
             })
             .attr("r", 0)
             .style("fill", 'gray');
+
+        arcs = d3.select("#main_svg")
+        .append("g")
+        .attr("id", "arcs")
+    
+        // draw arcs
+        data.forEach(function (item) {
+            if (item["category"].indexOf("+") != -1) {
+                arc_data.push(item);
+                arc_data.push(item);
+
+                categories = item["category"].split("+")
+                arcGenerator = d3.arc();
+    
+                arc_first = arcGenerator({
+                    innerRadius: 0,
+                    outerRadius: 20,
+                    startAngle: 0,
+                    endAngle: Math.PI,
+                })
+    
+                arc_second = arcGenerator({
+                    innerRadius: 0,
+                    outerRadius: 20,
+                    startAngle: Math.PI,
+                    endAngle: Math.PI * 2,
+                })
+    
+                arcs.append("path")
+                    .attr("d", arc_first)
+                    .attr("transform", function () {
+                        result = "translate(" +
+                        String(1080 + 77.50559635997251 * parseFloat(item["latitude"]) - 2867.123671576876 - 64.6) +
+                        "," + String(59.30918915865678 * parseFloat(item["longitude"]) - 5342.349618255932) + ")";
+    
+                        arc_position.push(result);
+                        arc_position.push(result);
+                        return result;
+                    })
+                    // .attr("fill", color(categories[0]))
+                    .attr("opacity", 0)
+                    .attr("fill", "gray");
+    
+                arcs.append("path")
+                    .attr("d", arc_second)
+                    .attr("transform", function () {
+                        return "translate(" +
+                            String(1080 + 77.50559635997251 * parseFloat(item["latitude"]) - 2867.123671576876 - 64.6) +
+                            "," + String(59.30918915865678 * parseFloat(item["longitude"]) - 5342.349618255932) + ")"
+                    })
+                    // .attr("fill", color(categories[1]))
+                    .attr("opacity", 0)
+                    .attr("fill", "gray");
+            }
+        });
     }).catch(function (error) {
         console.log(error);
-    });
+    });    
 }
 
 function colorPoints() {
@@ -160,7 +224,7 @@ function colorPoints() {
                 return 20;
         })
         .transition()
-        .duration(1000)
+        .duration(500)
         .style("fill", function (d) {
             if(d["category"].indexOf("+") == -1)
                 return color(d["category"]);
@@ -168,53 +232,16 @@ function colorPoints() {
                 return "gray";
         });
 
-    arcs = d3.select("#main_svg")
-        .append("g")
-        .attr("id", "arcs")
-
-    // draw arcs
-    data.forEach(function (item) {
-        if (item["category"].indexOf("+") != -1) {
-            categories = item["category"].split("+")
-            arcGenerator = d3.arc();
-
-            arc_first = arcGenerator({
-                innerRadius: 0,
-                outerRadius: 20,
-                startAngle: 0,
-                endAngle: Math.PI,
-            })
-
-            arc_second = arcGenerator({
-                innerRadius: 0,
-                outerRadius: 20,
-                startAngle: Math.PI,
-                endAngle: Math.PI * 2,
-            })
-
-            arcs.append("path")
-                .attr("d", arc_first)
-                .attr("transform", function () {
-                    result = "translate(" +
-                    String(1080 + 77.50559635997251 * parseFloat(item["latitude"]) - 2867.123671576876 - 64.6) +
-                    "," + String(59.30918915865678 * parseFloat(item["longitude"]) - 5342.349618255932) + ")";
-
-                    arc_position.push(result);
-                    arc_position.push(result);
-                    return result;
-                })
-                .attr("fill", color(categories[0]));
-
-            arcs.append("path")
-                .attr("d", arc_second)
-                .attr("transform", function () {
-                    return "translate(" +
-                        String(1080 + 77.50559635997251 * parseFloat(item["latitude"]) - 2867.123671576876 - 64.6) +
-                        "," + String(59.30918915865678 * parseFloat(item["longitude"]) - 5342.349618255932) + ")"
-                })
-                .attr("fill", color(categories[1]));
-        }
-    })
+    d3.select("#arcs")
+    .selectAll("path")
+    .data(arc_data)
+    .attr("opacity", 1)
+    .transition()
+    .duration(500)
+    .attr("fiil", function(d, i) {
+        true_type = d["category"].split("+")[i%2];
+        return color(true_type);
+    });
 }
 
 function decolorPoints() {
@@ -223,7 +250,15 @@ function decolorPoints() {
         .data(data)
         .transition()
         .duration(500)
-        .style("fill", "gray");
+        .style("fill", "gray")
+        .attr("r", 20);
+
+    d3.select("#arcs")
+    .selectAll("path")
+    .data(arc_data)
+    .transition()
+    .duration(500)
+    .attr("fill", "gray");
 }
 
 function colorOneCategory(type) {
@@ -231,7 +266,7 @@ function colorOneCategory(type) {
         .selectAll("circle")
         .data(data)
         .transition()
-        .duration(1000)
+        .duration(500)
         .style("fill", function (d) {
             if (d["category"] == type) {
                 return color(d["category"].trim());
@@ -239,6 +274,21 @@ function colorOneCategory(type) {
                 return "gray";
             }
         });
+    d3.select("#arcs")
+    .selectAll("path")
+    .data(arc_data)
+    .transition()
+    .duration(500)
+    .attr("fill", function(d, i) {
+        true_type = d["category"].split("+")[i%2];
+        if(true_type == type) {
+            // return color(true_type);
+            return "gray";
+        }
+        else {
+            return "gray";
+        }
+    })
 }
 
 function decolorOneCategory() {
@@ -297,7 +347,7 @@ function gatherCategory() {
         .selectAll("circle")
         .data(data)
         .transition()
-        .duration(1000)
+        .duration(500)
         .attr("cx", function (d, i) {
             return position_x[true_index[i]];
         })
@@ -305,11 +355,11 @@ function gatherCategory() {
             return position_y[true_index[i]];
         });
 
-    // move arc
+    // move arcs
     d3.select("#arcs").selectAll("path")
     .data(arc_true_index)
     .transition()
-    .duration(1000)
+    .duration(500)
     .attr("transform", function(d) {
         return "translate(" + String(position_x[d]) + "," + String(position_y[d]) + ")";
     });
@@ -353,7 +403,7 @@ function lengthPoints() {
         .selectAll("circle")
         .data(data)
         .transition()
-        .duration(1000)
+        .duration(500)
         .attr("r", function (d) {
             return lengthScale(parseFloat(d["length"]));
         });

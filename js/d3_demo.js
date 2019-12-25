@@ -8,7 +8,9 @@ var options = {
 }
 
 var data;
-var category = [];
+var category = ["梁式桥", "桁架桥", "拱桥", "悬索桥", "斜拉桥",  "隧道"];
+// var category = [];
+
 var color;
 var current = {};
 var observer = {};
@@ -52,6 +54,7 @@ part.forEach(function (item) {
 });
 
 function bridgeBuilding() {
+    console.log("showing");
     showPoints();
 }
 
@@ -124,10 +127,12 @@ function showPoints() {
 }
 
 function drawPoints() {
-    var svg = d3.select("#main_svg");
+    var svg = d3.select("#main_svg").select("#test_points");
     d3.csv("bridge_info.csv", function (d) {
-        if (category.indexOf(d["category"].trim()) == -1 && d["category"].indexOf("+") == -1)
-            category.push(d["category"].trim());
+        // if (category.indexOf(d["category"].trim()) == -1 && d["category"].indexOf("+") == -1)
+        //     category.push(d["category"].trim());
+
+        // console.log(category);
 
         color = d3.scaleOrdinal()
             .domain(category)
@@ -318,7 +323,7 @@ function gatherCategory() {
 
     data.forEach(function() {
         position_x.push(90 + (current_index % 20) * 50);
-        position_y.push(100 + parseInt(current_index / 20) * 50);
+        position_y.push(300 + parseInt(current_index / 20) * 80);
         true_index.push(0);
         current_index = current_index + 1;
     })

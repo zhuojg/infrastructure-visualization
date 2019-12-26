@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Bridge</title>
+    <!--CSS goes here-->
+
+    <style type="text/css">
+        body {
+            touch-action: none;
+            margin: 0 0 0 0;
+            color: #3B4952;
+        }
+
+        .map {
+            z-index: -200;
+            position: fixed;
+            vertical-align: middle;
+            align-items: center;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 100%;
+            top: 0;
+        }
+
+        .map svg {
+            height: 100%;
+        }
+
+        @media screen and (max-device-width: 500px) {
+            .map svg {
+                width: 100%;
+            }
+        }
+
+        .content {
+            /* font-size: 12px; */
+            z-index: 100;
+            /* position: relative; */
+            text-align: left;
+            width: 30em;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 4vh;
+            margin: 3vh auto;
+            border-radius: 1vh;
+            border-style: solid;
+            border-width: 1vh;
+            border-color: #3fa9f5;
+            box-shadow: 0 0 0 1vh black;
+        }
+
+        .content img {
+            width: 100%;
+        }
+
+        .first_title {
+            z-index: -100;
+            position: fixed;
+            vertical-align: middle;
+            align-items: center;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 100%;
+            top: 0;
+        }
+
+        .first_title svg {
+            height: 100%;
+        }
+
+        #river_origin {
+            position: fixed;
+            top: 50vh;
+            left: 0;
+            right: 0;
+        }
+
+        .bg-blur {
+            position: fixed;
+            background: #e3dbc8;
+            float: left;
+            height: 100%;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            /* -webkit-filter: blur(15px); */
+            /* filter: blur(15px); */
+            z-index: -300;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+        }
+
+        .content_card {
+            z-index: 100;
+            text-align: left;
+            background: #e3dbc8;
+            margin: 0 30% 0 30%;
+            padding: 10vh;
+        }
+
+        .content_card img {
+            width: 100%;
+        }
+
+        .down {
+            text-align: center;
+            font-size: 80%;
+            padding-top: 4vh;
+        }
+
+        @media screen and (max-device-width: 500px) {
+            .content_card {
+                margin: 0 0 0 0;
+                padding: 10vh 5% 10vh 5%;
+            }
+        }
+
+        .cover {
+            height: 100vh;
+        }
+
+        .cover img {
+            height: 100%;
+        }
+
+        .category_img {
+            width: 50%;
+        }
+
+        .note {
+            text-align: left;
+            font-size: 60%;
+            color: gray;
+        }
+    </style>
+</head>
+
+<body style="text-align:center;">
+    <div>
+        <div class="bg-blur"></div>
+        <div class="cover" data-0="opacity: 1" data-500="opacity: 0">
+            <img src="static/img/cover.png">
+        </div>
+        <div id="first_part" class="map" data-smooth-scrolling="off">
+            <div class="map" data-anchor-target="#river_gap_8" data-top="opacity: 1" data-top-bottom="opacity: 0">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 1080 2201">
+                    <defs>
+                        <style>
+                            .cls-1,
+                            .cls-2,
+                            .cls-5 {
+                                fill: none;
+                                stroke-miterlimit: 10;
+                            }
+
+                            .cls-1 {
+                                stroke: #bdccd4;
+                                stroke-dasharray: 12;
+                            }
+
+                            .cls-1,
+                            .cls-2 {
+                                stroke-width: 7px;
+                                fill-rule: evenodd;
+                            }
+
+                            .cls-2 {
+                                stroke: #1e3160;
+                            }
+
+                            .cls-3 {
+                                fill: #972718;
+                            }
+
+                            .cls-4,
+                            .cls-8 {
+                                fill: #fff;
+                            }
+
+                            .cls-5 {
+                                stroke: #000;
+                                stroke-width: 3px;
+                            }
+
+                            .cls-6,
+                            .cls-8 {
+                                font-size: 12px;
+                                font-family: FZDBSJW--GB1-0, FZDaBiaoSong-B06S;
+                            }
+
+                            .cls-7 {
+                                font-size: 9px;
+                                font-family: SourceHanSansHWSC-Regular-GBpc-EUC-H, Source Han Sans HW SC;
+                            }
+                        </style>
+                    </defs>
+                    <title>curve-dialogue</title>
+                    <g data-anchor-target="#river_gap_0" data-top="transform: translate(-270%, 0%) scale(5)"
+                        data-top-bottom="transform: translate(-330%, -30%) scale(5)">
+                        <g data-anchor-target="#river_gap_1" data-top="transform: translate(0%, 0%) scale(1)"
+                            data-center="transform: translate(20%, -12%) scale(1)"
+                            data-center-bottom="transform: translate(54%, -16%) scale(1)"
+                            data-top-bottom="transform: translate(56%, -18%) scale(1)">
+                            <g data-anchor-target="#river_gap_2" data-top="transform: translate(0%, 0%) scale(1)"
+                                data-top-bottom="transform: translate(-18%, -24%) scale(1)">
+                                <g data-anchor-target="#river_gap_3" data-top="transform: translate(0%, 0%) scale(1)"
+                                    data-top-bottom="transform: translate(-14%, -12%) scale(1)">
+                                    <g data-anchor-target="#river_gap_4"
+                                        data-top="transform: translate(0%, 0%) scale(1)"
+                                        data-top-bottom="transform: translate(0%, -8%) scale(1)">
+                                        <g data-anchor-target="#river_gap_5"
+                                            data-top="transform: translate(0%, 0%) scale(1)"
+                                            data-top-bottom="transform: translate(12%, -2%) scale(1)">
+                                            <g data-anchor-target="#river_gap_6"
+                                                data-top="transform: translate(0%, 0%) scale(1)"
+                                                data-top-bottom="transform: translate(-28%, -12%) scale(1)">
+                                                <g data-anchor-target="#river_gap_7"
+                                                    data-top="transform: translate(0%, 0%) scale(1)"
+                                                    data-top-bottom="transform: translate(20%, -2%) scale(1)">
+                                                    <g data-anchor-target="#river_gap_8"
+                                                        data-top="transform: translate(0%, 0%) scale(1)"
+                                                        data-top-bottom="transform: translate(0%, 0%) scale(1)">
+                                                        <g id="虚线">
+                                                            <path id="第一段" class="cls-1"
+                                                                d="M773.5,253.5c0,.33331-2.6668,9.6671-4,14q23.49765,12.49877,47,25c1.0605,17.9417,5.8235,36.1947,13,49l12,16c3.8085,11.3124-4.359,22.3674-2,35,16.0876,19.36829,30.0725,31.99989,30,69-17.2559,9.5929-20.373,30.484-35,42l-36,21c-10.6846,8.2787-14.7704,22.1902-23,33-5.3595,7.0398-14.0255,9.4639-21,15q-7.6219,8.23165-15.24559,16.46511Q734.87708,602.23256,730.5,615.5c-3.39087-.3176-15.3562-1.01734-26,7-11.16431,8.40948-16.50244,23.1163-14,38q-16.00013,8.5-32,17l-25,3a128.019,128.019,0,0,1-18,12c-10.32178,5.67184-13.31226,5.41608-15,5-7.57178-1.86662-10.53638-12.28753-11-14q-7.99987-1.5-16-3a137.01626,137.01626,0,0,0-33,3c-15.53516,3.37971-21.36279,7.59584-38,11-13.18359,2.69751-21.78613,2.559-29,3-29.7146,1.81653-40.92114,13.25974-82,28a459.67705,459.67705,0,0,1-51,15c-15.80981-2.339-28.49268.04169-30,5-1.58032,5.19833,8.54956,15.1145,26,22a86.20857,86.20857,0,0,0-60,2q-29.21631,16.77846-27,26,3.108,12.92719,68,11-29.50012,21-59,42h-6c-8.46509-3.4732-17.82886-7.1425-29-5q-1.99987,1.49985-4,3a56.49761,56.49761,0,0,0,1.40991,15.31885A58.18476,58.18476,0,0,0,234.5,887.5l-21,5q-1.99987,12.5-4,25a39.08991,39.08991,0,0,1,18,20,38.17953,38.17953,0,0,1,2,20c29.13892-10.93176,57.48706-18.50739,64-9,2.89893,4.23169-.44946,9.04294,2,14,4.0498,8.19553,21.74048,12.32315,73,2a28.81541,28.81541,0,0,0-9,20c-.25562,13.00131,8.76636,20.95,10,22l33-19a69.00342,69.00342,0,0,0-6,58,43.67961,43.67961,0,0,1,2,18c-1.97974,18.60388-16.332,29.72742-13,34,2.88745,3.70233,13.78711-4.49237,22,1,3.37817,2.25919,2.98218,4.61414,8,13a106.32315,106.32315,0,0,0,11.11572,14.96579,65.02412,65.02412,0,0,0,23.41919,16.025L446.5,1144.5a99.82909,99.82909,0,0,0,12,20c12.46606,16.13086,22.93311,19.2926,25,31,1.7019,9.64008-4.7312,11.2569-4,21,1.07275,14.29529,15.91016,23.986,38,38a299.47576,299.47576,0,0,0,44,23,150.75341,150.75341,0,0,1,8,138q-11.99891,19.49808-24,39-11.499,5.49948-23,11c-8.64062,10.87109,9.04639,12.30487,5,26-1.905,6.44739-6.14355,9.49-6,21-11.8-9.69757-26.70728-9.43121-34-2-5.84546,5.95636-5.20508,14.89178-5,17-.25854,10.89862,1.63257,17.56171,4,25-8.36548,1.54932-17.80713,5.16071-16,14-1.27271,15.52618,22.03418,22.48132,29,34q2.99964,10.499,6,21c.95459-.48132,19.86133-9.63092,36,1a33.94188,33.94188,0,0,1,13,17q-10.5,8.49995-21,17l-12,12a140.65213,140.65213,0,0,1-32,29q-5.50012,11.49995-11,23,7.03344,12.75,14.06665,25.5c7.5979.11694,17.9148,1.29028,20.93335,7.5,2.87524,5.915-3.926,10.11511-4,19-.10815,12.995,14.928,24.66333,45,48a47.10782,47.10782,0,0,1,10.801,10.53479c7.38793,10.34314,3.2268,16.1698,31.51074,21.936q1.29785.26459,2.68823.52917a82.8261,82.8261,0,0,0,29,24c17.25732,8.38,23.80835,3.40564,33,11,18.75879,15.49927,12.30737,53.43335,10,67a136.06452,136.06452,0,0,1-11,35,101.326,101.326,0,0,1-11,31c-19.31909,34.86243-53.92285,47.47119-65,51" />
+                                                        </g>
+                                                        <g id="curve">
+                                                            <path style="stroke-dasharray: 250; stroke-dashoffset: 0;"
+                                                                data-anchor-target="#river_gap_7"
+                                                                data-top="stroke-dashoffset:250;"
+                                                                data-top-bottom="stroke-dashoffset:0;" id="_8"
+                                                                data-name="8" class="cls-2"
+                                                                d="M674.38372,1930.39562A187.84964,187.84964,0,0,1,671.5,1955.5a136.06452,136.06452,0,0,1-11,35,101.326,101.326,0,0,1-11,31c-19.31909,34.86243-53.92285,47.47119-65,51" />
+                                                            <path style="stroke-dasharray: 350; stroke-dashoffset: 0;"
+                                                                data-anchor-target="#river_gap_6"
+                                                                data-top="stroke-dashoffset:350;"
+                                                                data-top-bottom="stroke-dashoffset:0;" id="_7"
+                                                                data-name="7" class="cls-2"
+                                                                d="M487.60351,1737.00286q2.48155,4.49857,4.96314,8.99714c7.5979.11694,17.9148,1.29028,20.93335,7.5,2.87524,5.915-3.926,10.11511-4,19-.10815,12.995,14.928,24.66333,45,48a47.10782,47.10782,0,0,1,10.801,10.53479c7.38793,10.34314,3.2268,16.1698,31.51074,21.936q1.29785.26459,2.68823.52917a82.8261,82.8261,0,0,0,29,24c17.25732,8.38,23.80835,3.40564,33,11,11.22512,9.27464,13.42313,26.5826,12.88372,41.89562" />
+                                                            <path style="stroke-dasharray: 250; stroke-dashoffset: 0;"
+                                                                data-anchor-target="#river_gap_5"
+                                                                data-top="stroke-dashoffset:250;"
+                                                                data-top-bottom="stroke-dashoffset:0;" id="_6"
+                                                                data-name="6" class="cls-2"
+                                                                d="M537.02916,1620.06251A30.40267,30.40267,0,0,1,541.5,1622.5a33.94188,33.94188,0,0,1,13,17q-10.5,8.49995-21,17l-12,12a140.65213,140.65213,0,0,1-32,29q-5.50012,11.49995-11,23,4.55184,8.25143,9.10351,16.50286" />
+                                                            <path style="stroke-dasharray: 400; stroke-dashoffset: 0;"
+                                                                data-anchor-target="#river_gap_4"
+                                                                data-top="stroke-dashoffset:400;"
+                                                                data-top-bottom="stroke-dashoffset:0;" id="_5"
+                                                                data-name="5" class="cls-2"
+                                                                d="M574.67331,1402.152c-1.74366,5.21183-3.55426,9.689-5.17331,13.348q-11.99891,19.49808-24,39-11.499,5.49948-23,11c-8.64062,10.87109,9.04639,12.30487,5,26-1.905,6.44739-6.14355,9.49-6,21-11.8-9.69757-26.70728-9.43121-34-2-5.84546,5.95636-5.20508,14.89178-5,17-.25854,10.89862,1.63257,17.56171,4,25-8.36548,1.54932-17.80713,5.16071-16,14-1.27271,15.52618,22.03418,22.48132,29,34q2.99964,10.499,6,21c.86749-.43741,16.56069-8.03347,31.52916-1.43749" />
+                                                            <path style="stroke-dasharray: 500; stroke-dashoffset: 0;"
+                                                                data-anchor-target="#river_gap_3"
+                                                                data-top="stroke-dashoffset:500;"
+                                                                data-top-bottom="stroke-dashoffset:0;" id="_4"
+                                                                data-name="4" class="cls-2"
+                                                                d="M430.99923,1131.20325A117.14653,117.14653,0,0,0,446.5,1144.5h0a99.82909,99.82909,0,0,0,12,20c12.46606,16.13086,22.93311,19.2926,25,31,1.7019,9.64008-4.7312,11.2569-4,21,1.07275,14.29529,15.91016,23.986,38,38a299.47576,299.47576,0,0,0,44,23,152.57167,152.57167,0,0,1,21,76,150.80817,150.80817,0,0,1-7.82669,48.652" />
+                                                            <path style="stroke-dasharray: 1000; stroke-dashoffset: 0;"
+                                                                data-anchor-target="#river_gap_2"
+                                                                data-top="stroke-dashoffset:1000;"
+                                                                data-top-bottom="stroke-dashoffset:0;" id="_3"
+                                                                data-name="3" class="cls-2"
+                                                                d="M310.5,745.5c-1.58032,5.19836,8.54956,15.1145,26,22a86.20857,86.20857,0,0,0-60,2q-29.21631,16.7785-27,26,3.108,12.92724,68,11-29.50012,21-59,42h-6c-8.46509-3.47321-17.82886-7.14252-29-5q-1.99987,1.49982-4,3a56.49764,56.49764,0,0,0,1.40991,15.31885A58.18479,58.18479,0,0,0,234.5,887.5q-10.5,2.49995-21,5-1.99987,12.50005-4,25a39.08991,39.08991,0,0,1,18,20,38.17953,38.17953,0,0,1,2,20c29.13892-10.93176,57.48706-18.50739,64-9,2.89893,4.23169-.44946,9.043,2,14,4.0498,8.19556,21.74048,12.32312,73,2a28.81523,28.81523,0,0,0-9,20c-.25562,13.00134,8.76636,20.95,10,22,11-6.33337,33-19,33-19s-7.26855,13.66364-9,25a69.6669,69.6669,0,0,0,3,33,47.27564,47.27564,0,0,1,1.60474,6.49982A41.821,41.821,0,0,1,398.5,1063.5c-1.97974,18.60388-16.332,29.72742-13,34,2.88745,3.70233,13.78711-4.49237,22,1,3.37817,2.25916,2.98218,4.61414,8,13a116.66489,116.66489,0,0,0,11.11572,14.96576q2.18971,2.50222,4.38352,4.73749" />
+                                                            <path style="stroke-dasharray: 1400; stroke-dashoffset: 0;"
+                                                                data-anchor-target="#river_gap_1"
+                                                                data-top="stroke-dashoffset:1400;"
+                                                                data-top-bottom="stroke-dashoffset:0;" id="_2"
+                                                                data-name="2" class="cls-2"
+                                                                d="M823.9802,329.35237A85.377,85.377,0,0,0,829.5,341.5l12,16c3.8085,11.3124-4.359,22.3674-2,35,16.0876,19.36829,30.0725,31.99989,30,69-17.2559,9.5929-20.373,30.484-35,42l-36,21c-10.6846,8.2787-14.7704,22.1902-23,33-5.3595,7.0398-14.0255,9.4639-21,15q-7.6219,8.23165-15.24559,16.46511Q734.87708,602.23256,730.5,615.5c-3.39087-.3176-15.3562-1.01734-26,7-11.16431,8.40948-16.50244,23.1163-14,38q-16.00013,8.5-32,17l-25,3a128.019,128.019,0,0,1-18,12c-10.32178,5.67184-13.31226,5.41608-15,5-7.57178-1.86662-10.53638-12.28753-11-14q-7.99987-1.5-16-3a137.01626,137.01626,0,0,0-33,3c-15.53516,3.37971-21.36279,7.59584-38,11-13.18359,2.69751-21.78613,2.559-29,3-29.7146,1.81653-40.92114,13.25974-82,28a459.67705,459.67705,0,0,1-51,15c-15.80981-2.339-28.49268.04169-30,5" />
+                                                            <path style="stroke-dasharray: 100; stroke-dashoffset: 0;"
+                                                                data-anchor-target="#river_gap_0"
+                                                                data-top="stroke-dashoffset:100;"
+                                                                data-top-bottom="stroke-dashoffset:0;" id="_1"
+                                                                data-name="1" class="cls-2"
+                                                                d="M773.5,253.5c0,.33331-2.6668,9.6671-4,14q23.49765,12.49877,47,25a131.45067,131.45067,0,0,0,7.48022,36.85237" />
+                                                        </g>
+                                                        <g id="circles">
+                                                            <circle class="cls-3" cx="575" cy="1401" r="9" />
+                                                            <circle class="cls-3" cx="489" cy="1737" r="9" />
+                                                            <circle class="cls-3" cx="674" cy="1931" r="9" />
+                                                            <circle class="cls-3" cx="586" cy="2073" r="9" />
+                                                            <circle class="cls-3" cx="774" cy="253" r="9" />
+                                                            <circle class="cls-3" cx="823" cy="329" r="9" />
+                                                            <circle class="cls-3" cx="312" cy="745" r="9" />
+                                                            <circle class="cls-3" cx="431" cy="1132" r="9" />
+                                                            <circle class="cls-3" cx="538" cy="1621" r="9" />
+                                                        </g>
+                                                        <g id="三江源">
+                                                            <polygon class="cls-4"
+                                                                points="774 253 774 152 639 152 639 242 763 242 774 253" />
+                                                            <line class="cls-5" x1="647" y1="215" x2="763" y2="215" />
+                                                            <text class="cls-6"
+                                                                transform="translate(647.47852 231.78223)">三江源</text>
+                                                            <text class="cls-7"
+                                                                transform="translate(648.6084 186.26758)">滚滚长江东逝水，浪花淘尽
+                                                                <tspan x="0" y="10.7998">英雄。三江源是一切壮丽的</tspan>
+                                                                <tspan x="0" y="21.60059">开端。</tspan>
+                                                            </text>
+                                                            <image width="500" height="333"
+                                                                transform="translate(639 82) scale(0.27)"
+                                                                xlink:href="static/img/sanjiangyuan.png" />
+                                                        </g>
+                                                        <g data-anchor-target="#river_gap_1" data-bottom="opacity: 0"
+                                                            data-center-bottom="opacity: 1" id="长江第一湾">
+                                                            <polygon class="cls-4"
+                                                                points="312 745 312 644 177 644 177 734 301 734 312 745" />
+                                                            <text class="cls-7"
+                                                                transform="translate(186.6084 678.26758)">万里长江从“世界屋脊”青
+                                                                <tspan x="0" y="10.7998">藏高原奔腾而下，在横断山</tspan>
+                                                                <tspan x="0" y="21.60059">脉的高山深谷中穿行。</tspan>
+                                                            </text>
+                                                            <line class="cls-5" x1="185" y1="707" x2="301" y2="707" />
+                                                            <text class="cls-6"
+                                                                transform="translate(185.47852 723.78223)">长江第一湾</text>
+
+                                                            <image width="1087" height="400"
+                                                                transform="translate(177 611.25302) scale(0.1242)"
+                                                                xlink:href="static/img/diyiwan.jpg" />
+                                                        </g>
+
+                                                        <g data-anchor-target="#river_gap_0" data-bottom="opacity: 0"
+                                                            data-center-bottom="opacity: 1" id="沱沱河大桥">
+                                                            <path class="cls-4" d="M823,329V291H743v27h69Z" />
+                                                            <text class="cls-6"
+                                                                transform="translate(746.47852 309.78223)">长江源特大桥</text>
+
+                                                        </g>
+                                                        <g data-anchor-target="#river_gap_2" data-bottom="opacity: 0"
+                                                            data-center-bottom="opacity: 1" id="重庆">
+                                                            <path class="cls-4" d="M431,1133v-38H351v27h69Z" />
+                                                            <text class="cls-6"
+                                                                transform="translate(379.47852 1113.78223)">重庆</text>
+                                                        </g>
+                                                        <g data-anchor-target="#river_gap_3" data-bottom="opacity: 0"
+                                                            data-center-bottom="opacity: 1" id="三峡">
+                                                            <path class="cls-4" d="M575,1401v-38H495v27h69Z" />
+                                                            <text class="cls-6"
+                                                                transform="translate(523.47852 1381.78223)">三峡</text>
+                                                        </g>
+                                                        <g data-anchor-target="#river_gap_4" data-bottom="opacity: 0"
+                                                            data-center-bottom="opacity: 1" id="武汉">
+                                                            <path class="cls-4" d="M538,1621v-38h80v27H549Z" />
+                                                            <text class="cls-6"
+                                                                transform="translate(566.47852 1601.78223)">武汉</text>
+                                                        </g>
+                                                        <g data-anchor-target="#river_gap_5" data-bottom="opacity: 0"
+                                                            data-center-bottom="opacity: 1" id="洞庭湖">
+                                                            <polygon class="cls-4"
+                                                                points="489 1737 489 1636 354 1636 354 1726 478 1726 489 1737" />
+                                                            <image width="630" height="420"
+                                                                transform="translate(354 1576) scale(0.21429)"
+                                                                xlink:href="static/img/dongtinghu.png" />
+                                                            <text class="cls-6"
+                                                                transform="translate(364.47852 1715.78223)">洞庭湖</text>
+                                                            <line class="cls-5" x1="364" y1="1699.5" x2="480"
+                                                                y2="1699.5" />
+                                                            <text class="cls-7"
+                                                                transform="translate(363.60938 1681.26758)">遥望洞庭山水翠
+                                                                <tspan x="0" y="10.7998">白银盘里一青螺</tspan>
+                                                            </text>
+
+                                                        </g>
+                                                        <g data-anchor-target="#river_gap_7" data-bottom="opacity: 0"
+                                                            data-center-bottom="opacity: 1" id="浦东">
+                                                            <polygon class="cls-4"
+                                                                points="586 2073 586 1972 451 1972 451 2062 575 2062 586 2073" />
+                                                            <text class="cls-6"
+                                                                transform="translate(459.47852 2051.78223)">上海浦东</text>
+                                                            <image width="605" height="329"
+                                                                transform="translate(451 1961) scale(0.22314)"
+                                                                xlink:href="static/img/pudong.png" />
+
+                                                        </g>
+                                                        <g data-anchor-target="#river_gap_6" data-bottom="opacity: 0"
+                                                            data-center-bottom="opacity: 1" id="南京长江大桥">
+                                                            <path class="cls-4" d="M674,1930v-38h80v27H685Z" />
+                                                            <text class="cls-6"
+                                                                transform="translate(678.47852 1910.78223)">南京长江大桥</text>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="map" data-anchor-target="#building_gap_0" data-center-bottom="opacity: 0"
+                data-top-bottom="opacity: 1">
+                <svg id="main_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920">
+                    <defs>
+                        <style>
+                            .curve {
+                                fill: none;
+                                stroke-width: 7px;
+                                fill-rule: evenodd;
+                                stroke-miterlimit: 10;
+                                stroke: #3fa9f5;
+                            }
+                        </style>
+                    </defs>
+                    <title>pure_curve</title>
+                    <g id="曲线" data-anchor-target="#category_content" data-top="opacity: 1"
+                        data-top-bottom="opacity: 0">
+                        <path id="第一段-2" data-name="第一段" class="curve"
+                            d="M648.38372,1742.39562A187.84964,187.84964,0,0,1,645.5,1767.5a136.06452,136.06452,0,0,1-11,35,101.326,101.326,0,0,1-11,31c-19.31909,34.86243-53.92285,47.47119-65,51" />
+                        <path id="第一段-3" data-name="第一段" class="curve"
+                            d="M444.5,1378.5c-1.27271,15.52618,22.03418,22.48132,29,34q2.99964,10.499,6,21c.95459-.48132,19.86133-9.63092,36,1a33.94188,33.94188,0,0,1,13,17q-10.5,8.49995-21,17l-12,12a140.65213,140.65213,0,0,1-32,29q-5.50012,11.49995-11,23,7.03344,12.75,14.06665,25.5c7.5979.11694,17.9148,1.29028,20.93335,7.5,2.87524,5.915-3.926,10.11511-4,19-.10815,12.995,14.928,24.66333,45,48a47.10782,47.10782,0,0,1,10.801,10.53479c7.38793,10.34314,3.2268,16.1698,31.51074,21.936q1.29785.26459,2.68823.52917a82.8261,82.8261,0,0,0,29,24c17.25732,8.38,23.80835,3.40564,33,11,11.22512,9.27464,13.42313,26.5826,12.88372,41.89562" />
+                        <path id="第一段-4" data-name="第一段" class="curve"
+                            d="M548.67331,1214.152c-1.74366,5.21183-3.55426,9.689-5.17331,13.348q-11.99891,19.49808-24,39-11.499,5.49948-23,11c-8.64062,10.87109,9.04639,12.30487,5,26-1.905,6.44739-6.14355,9.49-6,21-11.8-9.69757-26.70728-9.43121-34-2-5.84546,5.95636-5.20508,14.89178-5,17-.25854,10.89862,1.63257,17.56171,4,25-8.36548,1.54932-17.80713,5.16071-16,14" />
+                        <path id="第一段-5" data-name="第一段" class="curve"
+                            d="M747.5,65.5c0,.33331-2.6668,9.6671-4,14q23.49765,12.49876,47,25c1.0605,17.9417,5.8235,36.1947,13,49l12,16c3.8085,11.3124-4.359,22.3674-2,35,16.0876,19.36829,30.0725,31.99989,30,69-17.2559,9.5929-20.373,30.484-35,42l-36,21c-10.6846,8.2787-14.7704,22.1902-23,33-5.3595,7.0398-14.0255,9.4639-21,15q-7.6219,8.23165-15.24559,16.46511Q708.87708,414.23256,704.5,427.5c-3.39087-.3176-15.3562-1.01734-26,7-11.16431,8.40948-16.50244,23.1163-14,38q-16.00013,8.5-32,17l-25,3a128.019,128.019,0,0,1-18,12c-10.32178,5.67184-13.31226,5.41608-15,5-7.57178-1.86662-10.53638-12.28753-11-14q-7.99987-1.5-16-3a137.01626,137.01626,0,0,0-33,3c-15.53516,3.37971-21.36279,7.59584-38,11-13.18359,2.69751-21.78613,2.559-29,3-29.7146,1.81653-40.92114,13.25974-82,28a459.67705,459.67705,0,0,1-51,15c-15.80981-2.339-28.49268.04169-30,5-1.58032,5.19833,8.54956,15.1145,26,22a86.20857,86.20857,0,0,0-60,2q-29.21631,16.77846-27,26,3.108,12.92719,68,11-29.50012,21-59,42h-6c-8.46509-3.4732-17.82886-7.1425-29-5q-1.99987,1.49985-4,3a56.49761,56.49761,0,0,0,1.40991,15.31885A58.18476,58.18476,0,0,0,208.5,699.5l-21,5q-1.99987,12.5-4,25a39.08991,39.08991,0,0,1,18,20,38.17953,38.17953,0,0,1,2,20c29.13892-10.93176,57.48706-18.50739,64-9,2.89893,4.23169-.44946,9.04294,2,14,4.0498,8.19553,21.74048,12.32315,73,2a28.81541,28.81541,0,0,0-9,20c-.25562,13.00131,8.76636,20.95,10,22l33-19a69.00342,69.00342,0,0,0-6,58,47.27636,47.27636,0,0,1,1.60474,6.49982A41.82174,41.82174,0,0,1,372.5,875.5c-1.97974,18.60388-16.332,29.72742-13,34,2.88745,3.70233,13.78711-4.49237,22,1,3.37817,2.25919,2.98218,4.61414,8,13a116.6509,116.6509,0,0,0,31,33h0a99.82909,99.82909,0,0,0,12,20c12.46606,16.13086,22.93311,19.2926,25,31,1.7019,9.64008-4.7312,11.2569-4,21,1.07275,14.29529,15.91016,23.986,38,38a299.47576,299.47576,0,0,0,44,23,152.57167,152.57167,0,0,1,21,76,150.80817,150.80817,0,0,1-7.82669,48.652" />
+                    </g>
+                    <g id="test_points">
+
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div id="skrollr-body">
+        <div id="start_part">
+            <div class="gap" id="river_gap_0" style="padding-top: 100vh"></div>
+            <div class="gap" style="padding-top: 100vh"></div>
+            <div class="content_card">
+                <h1>沱沱河大桥</h1>
+                <img src="static/img/dongtinghu.png" />
+                <p>
+                    洞庭湖位于长江中游，是长江流域乃至全国最大的通江蓄水湖泊，曾为长江流域化解了无数次洪患。湖区内，以岳阳楼为代表的名胜古迹众多，
+                    自然风光恬静动人。水域周边分布着粮油、水产等传统农业生产基地，是名符其实的“鱼米之乡”。
+                </p>
+            </div>
+            <div class="gap" id="river_gap_1" style="padding-top: 400vh"></div>
+            <div class="gap" id="river_gap_2" style="padding-top: 180vh"></div>
+            <div class="gap" style="padding-top: 100vh"></div>
+            <div class="content_card">
+                <h1>重庆</h1>
+                <img src="static/img/dongtinghu.png" />
+                <p>
+                    洞庭湖位于长江中游，是长江流域乃至全国最大的通江蓄水湖泊，曾为长江流域化解了无数次洪患。湖区内，以岳阳楼为代表的名胜古迹众多，
+                    自然风光恬静动人。水域周边分布着粮油、水产等传统农业生产基地，是名符其实的“鱼米之乡”。
+                </p>
+            </div>
+            <div class="gap" id="river_gap_3" style="padding-top: 100vh"></div>
+            <div class="gap" style="padding-top: 100vh"></div>
+            <div class="content_card">
+                <h1>三峡</h1>
+                <img src="static/img/dongtinghu.png" />
+                <p>
+                    洞庭湖位于长江中游，是长江流域乃至全国最大的通江蓄水湖泊，曾为长江流域化解了无数次洪患。湖区内，以岳阳楼为代表的名胜古迹众多，
+                    自然风光恬静动人。水域周边分布着粮油、水产等传统农业生产基地，是名符其实的“鱼米之乡”。
+                </p>
+            </div>
+            <div class="gap" id="river_gap_4" style="padding-top: 100vh"></div>
+            <div class="gap" style="padding-top: 100vh"></div>
+            <div class="content_card">
+                <h1>武汉</h1>
+                <h2>从轮渡，到“万里长江第一桥”</h2>
+                <h2>从两小时，到两分钟</h2>
+                <p>
+                    民国时期，全国最主要的铁路大动脉平汉线和粤汉线在武汉被长江一分为二。1937年3月，江岸火车站江边和徐家棚火车站江边，两个轮渡码头建成，两条铁路实现对接。时人称之为“武汉一大怪，火车轮渡载”。
+                </p>
+                <p>由于流程繁琐，火车要顺利过江，前后需两小时。</p>
+                <img src="static/img/轮渡.jfif">
+                <p class="note">火车轮渡</p>
+                <p>中华人民共和国成立以后，武汉长江大桥的建设被列入中国第一个五年计划的苏联援华156项工程之一，于1950年起正式开始进行大桥的测量和设计，1955年9月动工建造，1957年10月正式通车。总长1670米的武汉长江大桥，将过江时间缩短了到了几分钟。
+                </p>
+                <img src="static/img/武汉长江大桥通车.jpg">
+                <p class="note">武汉长江大桥通车盛况</p>
+                <p>武汉长江大桥是长江上第一座铁路、公路两用桥，因此又被称为“万里长江第一桥”。</p>
+                <img src="static/img/武汉长江大桥.jpg">
+                <p class="note">武汉长江大桥</p>
+            </div>
+            <div class="gap" id="river_gap_5" style="padding-top: 100vh"></div>
+            <div class="gap" id="river_gap_6" style="padding-top: 100vh"></div>
+            <div class="gap" style="padding-top: 100vh"></div>
+            <div class="content_card">
+                <h1>南京长江大桥</h1>
+                <img src="static/img/dongtinghu.png" />
+                <p>
+                    洞庭湖位于长江中游，是长江流域乃至全国最大的通江蓄水湖泊，曾为长江流域化解了无数次洪患。湖区内，以岳阳楼为代表的名胜古迹众多，
+                    自然风光恬静动人。水域周边分布着粮油、水产等传统农业生产基地，是名符其实的“鱼米之乡”。
+                </p>
+            </div>
+            <div class="gap" id="river_gap_7" style="padding-top: 100vh"></div>
+            <div class="gap" id="river_gap_8" style="padding-top: 100vh"></div>
+        </div>
+        <div id="building">
+            <div id="building_gap_0" class="gap" style="padding-top: 50vh;"></div>
+            <div id="building_content">
+                <h1>大桥建设</h1>
+                <p>大桥的建设，是中国基建发展的缩影。</p>
+                <p class="down">上滑查看长江大桥的建设历史</p>
+            </div>
+            <div id="building_gap_1" class="gap" style="padding-top: 150vh;"></div>
+            <div id="bridge_building" data-anchor-target="#building_content" data-top="opacity: 0;"
+                data-top-bottom="opacity: 1" class="gap"></div>
+        </div>
+
+        <div id="category">
+            <div id="category_content" class="content_card">
+                <h1>大桥种类</h1>
+                <div id="bridge_category_content">
+                    <p>长江流域情况复杂，地质条件、通航需求、建设需求等原因都会影响桥梁的修建，因此长江上的大桥种类也非常丰富，覆盖了梁式桥、桁架桥、拱桥、悬索桥、斜拉桥五大类别。
+                        而随着技术的进步，过江隧道也逐渐成为沟通长江两岸的新选择。</p>
+                    <br />
+                    <p>
+                        长江大桥不仅种类多样化，各个类别的建造水平也已达到世界一流。
+                    </p>
+                    <p class="down">上滑查看长江大桥的种类分布</p>
+                </div>
+            </div>
+            <div id="bridge_category_gap" class="gap" style="padding-top: 100vh"></div>
+            <div id="bridge_category" data-anchor-target="#category_content" data-top="opacity: 0"
+                data-top-bottom="opacity: 1"></div>
+        </div>
+
+
+        <div id="liang">
+            <div class="gap" style="padding-top: 80vh"></div>
+            <div id="bridge_liang" data-anchor-target="#bridge_category_gap" data-top="opacity: 0"
+                data-top-bottom="opacity: 1" class="gap"></div>
+            <div id="bridge_category_liang" class="content_card">
+                <h1>梁式桥</h1>
+                <img class="category_img" src="static/img/梁式桥.svg">
+                <p>
+                    梁式桥是以主梁作为主要承重构件的桥梁。
+                </p>
+                <p>
+                    之前提到的<b>南京长江大桥</b>就使用了这种结构。
+                </p>
+            </div>
+            <div id="bridge_liang_gap" class="gap" style="padding-top: 50vh"></div>
+        </div>
+
+        <div id="hengjia">
+            <div class="gap" style="padding-top: 80vh"></div>
+            <div id="bridge_hengjia" data-anchor-target="#bridge_liang_gap" data-top="opacity: 0"
+                data-top-bottom="opacity: 1" class="gap"></div>
+            <div id="bridge_category_hengjia" class="content_card">
+                <h1>桁架桥</h1>
+                <img class="category_img" src="static/img/桁架桥.svg">
+                <p>
+                    桁架桥的主体类似屋子里的“桁”。
+                </p>
+                <p>
+                    和梁式桥一样，它的结构相对简单，因此更多在早期的长江大桥上使用，如“万里长江第一桥”——<b>武汉长江大桥</b>。
+                </p>
+            </div>
+            <div class="gap" id="bridge_hengjia_gap" style="padding-top: 50vh"></div>
+        </div>
+
+        <div id="gong">
+            <div class="gap" style="padding-top: 80vh"></div>
+            <div id="bridge_gong" data-anchor-target="#bridge_hengjia_gap" data-top="opacity: 0"
+                data-top-bottom="opacity: 1" class="gap"></div>
+            <div id="bridge_category_gong" class="content_card">
+                <h1>拱桥</h1>
+                <img class="category_img" src="static/img/拱桥.svg">
+                <p>
+                    拱桥是以承受轴向压力为主的拱（称为主拱圈）作为主要承重构件的桥梁。
+                </p>
+                <p>
+                    拱桥是一种古老的结构，但是它在今天仍然能够发挥重要的作用。
+                </p>
+                <br />
+                <h2>朝天门长江大桥</h2>
+                <h3>长江拱桥之最</h3>
+                <img src="static/img/朝天门长江大桥.png">
+                <p>
+                    2018年之前为世界上跨度最大的拱桥
+                </p>
+            </div>
+            <div class="gap" id="bridge_gong_gap" style="padding-top: 50vh"></div>
+        </div>
+
+        <div id="xuansuo">
+            <div class="gap" style="padding-top: 80vh"></div>
+            <div id="bridge_xuansuo" data-anchor-target="#bridge_gong_gap" data-top="opacity: 0"
+                data-top-bottom="opacity: 1" class="gap"></div>
+            <div id="bridge_category_xuansuo" class="content_card">
+                <h1>悬索桥</h1>
+                <img class="category_img" src="static/img/悬索桥.svg">
+                <p>
+                    悬索桥是以承受拉力的缆索或链索作为主要承重构件的桥梁。
+                </p>
+                <br />
+                <h2>金安金沙江大桥</h2>
+                <h3>长江悬索桥之最</h3>
+                <img src="static/img/金安金沙江大桥.png">
+                <p>
+                    世界上最大跨径山区悬索桥
+                </p>
+            </div>
+            <div class="gap" id="bridge_xuansuo_gap" style="padding-top: 50vh"></div>
+        </div>
+
+        <div id="xiela">
+            <div class="gap" style="padding-top: 80vh"></div>
+            <div id="bridge_xiela" data-anchor-target="#bridge_xuansuo_gap" data-top="opacity: 0"
+                data-top-bottom="opacity: 1" class="gap"></div>
+            <div id="bridge_category_xiela" class="content_card">
+                <h1>斜拉桥</h1>
+                <img class="category_img" src="static/img/斜拉桥.svg">
+                <p>
+                    斜拉桥由主梁、斜向拉紧主梁的钢缆索以及支承缆索的索塔等部分组成。
+                </p>
+                <br />
+                <h2>沪通长江大桥</h2>
+                <h3>长江斜拉桥之最</h3>
+                <img src="static/img/沪通长江大桥.jpg">
+                <p>
+                    世界上首座超过千米跨度的公铁两用桥梁；
+                </p>
+                <P>
+                    拥有世界第一跨度（1092米）和第一高度（325米）的公铁两用斜拉桥。
+                </p>
+
+            </div>
+            <div class="gap" id="bridge_xiela_gap" style="padding-top: 10vh"></div>
+        </div>
+
+        <div id="conclusion">
+            <div class="content_card">
+                <p>长江大桥，是中国基建的辉煌成就。</p>
+            </div>
+        </div>
+
+        <div id="acknowledgement">
+            <div class="content_card">
+                <h1>鸣谢</h1>
+            </div>
+        </div>
+
+        <div class="gap" style="padding-top: 200vh"></div>
+
+    </div>
+
+
+
+    <!--external JS libraries goes here-->
+    <script type="text/javascript" src="lib/d3/d3.min.js"></script>
+    <script type="text/javascript" src="lib/skrollr.min.js"></script>
+
+
+
+    <!--JS application goes here-->
+    <script type="text/javascript" src="js/d3_demo.js"></script>
+    <script type="text/javascript">
+        skrollr.init({
+            easing: {
+                river: function (p) {
+                    return Math.sin(Math.PI * p / 2);
+                },
+                river_1: function (p) {
+                    return Math.sin(Math.PI * p / 2);
+                },
+                slow_fast: function (p) {
+                    return p * p;
+                }
+            },
+            forceHeight: false,
+        });
+    </script>
+</body>
+
+</html>
